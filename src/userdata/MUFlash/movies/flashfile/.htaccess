@@ -1,0 +1,10 @@
+
+# generated at Fri Jan 27 08:56:17 CET 2012 by ModuleStudio 0.5.4 (http://modulestudio.de)
+# ----------------------------------------------------------------------
+# Purpose of file: give access to upload files treated in this directory
+# ----------------------------------------------------------------------
+deny from all
+<FilesMatch "\.(swf)$">
+    order allow,deny
+    allow from all
+</filesmatch>

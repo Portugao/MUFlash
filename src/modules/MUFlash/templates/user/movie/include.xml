@@ -1,0 +1,14 @@
+{* purpose of this template: movies xml inclusion template in user area *}
+<movie id="{$item.id}" createdon="{$item.createdDate|dateformat}" updatedon="{$item.updatedDate|dateformat}">
+    <id>{$item.id}</id>
+    <title><![CDATA[{$item.title}]]></title>
+    <description><![CDATA[{$item.description}]]></description>
+    <preview{if $item.preview ne ''} extension="{$item.previewMeta.extension}" size="{$item.previewMeta.size}" isImage="{if $item.previewMeta.isImage}true{else}false{/if}"{if $item.previewMeta.isImage} width="{$item.previewMeta.width}" height="{$item.previewMeta.height}" format="{$item.previewMeta.format}"{/if}{/if}>{$item.preview}</preview>
+    <flashFile{if $item.flashFile ne ''} extension="{$item.flashFileMeta.extension}" size="{$item.flashFileMeta.size}" isImage="{if $item.flashFileMeta.isImage}true{else}false{/if}"{if $item.flashFileMeta.isImage} width="{$item.flashFileMeta.width}" height="{$item.flashFileMeta.height}" format="{$item.flashFileMeta.format}"{/if}{/if}>{$item.flashFile}</flashFile>
+    <backgroundColour><![CDATA[{$item.backgroundColour}]]></backgroundColour>
+    <play>{if !$item.play}0{else}1{/if}</play>
+    <playLoop>{if !$item.playLoop}0{else}1{/if}</playLoop>
+    <width><![CDATA[{$item.width}]]></width>
+    <height><![CDATA[{$item.height}]]></height>
+    <playerVersion><![CDATA[{$item.playerVersion}]]></playerVersion>
+</movie>

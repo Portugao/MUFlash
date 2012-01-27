@@ -1,0 +1,5 @@
+{* purpose of this template: movies view csv view in user area *}
+{muflashTemplateHeaders contentType='text/comma-separated-values; charset=iso-8859-15' asAttachment=true filename='Movies.csv'}
+"{gt text='Title'}";"{gt text='Description'}";"{gt text='Preview'}";"{gt text='Flash file'}";"{gt text='Background colour'}";"{gt text='Play'}";"{gt text='Play loop'}";"{gt text='Width'}";"{gt text='Height'}";"{gt text='Player version'}"{foreach item='movie' from=$items}
+"{$movie.title|replace:"\"":""}";"{$movie.description|replace:"\"":""}";"{$movie.preview}";"{$movie.flashFile}";"{$movie.backgroundColour|replace:"\"":""}";"{$movie.play|yesno:true}";"{$movie.playLoop|yesno:true}";"{$movie.width|replace:"\"":""}";"{$movie.height|replace:"\"":""}";"{$movie.playerVersion|replace:"\"":""}"{/foreach}
+

@@ -1,0 +1,3 @@
+{* purpose of this template: movies display json view in user area *}
+{muflashTemplateHeaders contentType='application/json'}
+{$movie->toJson()}
