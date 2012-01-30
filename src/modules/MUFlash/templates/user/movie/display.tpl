@@ -6,32 +6,25 @@
 {pagesetvar name='title' value=$templateTitle|@html_entity_decode}
 <div class="z-frontendcontainer">
     <h2>{$templateTitle|notifyfilters:'muflash.filter_hooks.movies.filter'}</h2>
+    <p>{$movie.description}</p>
+		<div id="{$movie.title}">
+			<a href="http://www.adobe.com/go/getflash">
+				<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+			</a>
+			<p>{gt text='For this website is flash player version'} {$movie.playerVersion} {gt text='or higher necessary.'}</p>
+		</div>
 
-
-<dl id="MUFlash_body">
+{* <dl id="MUFlash_body">
     <dt>{gt text='Description'}</dt>
     <dd>{$movie.description}</dd>
-    <dt>{gt text='Preview'}</dt>
-    <dd>{if $movie.preview ne ''}
-  <a href="{$movie.previewFullPathURL}" title="{$movie.title|replace:"\"":""}"{if $movie.previewMeta.isImage} rel="imageviewer[movie]"{/if}>
-  {if $movie.previewMeta.isImage}
-      <img src="{$movie.preview|muflashImageThumb:$movie.previewFullPath:250:150}" width="250" height="150" alt="{$movie.title|replace:"\"":""}" />
-  {else}
-      {gt text='Download'} ({$movie.previewMeta.size|muflashGetFileSize:$movie.previewFullPath:false:false})
-  {/if}
-  </a>
-{else}&nbsp;{/if}
-</dd>
     <dt>{gt text='Flash file'}</dt>
-    <dd>{if $movie.flashFile ne ''}
-  <a href="{$movie.flashFileFullPathURL}" title="{$movie.title|replace:"\"":""}"{if $movie.flashFileMeta.isImage} rel="imageviewer[movie]"{/if}>
+    <dd>  <a href="{$movie.flashFileFullPathURL}" title="{$movie.title|replace:"\"":""}"{if $movie.flashFileMeta.isImage} rel="imageviewer[movie]"{/if}>
   {if $movie.flashFileMeta.isImage}
       <img src="{$movie.flashFile|muflashImageThumb:$movie.flashFileFullPath:250:150}" width="250" height="150" alt="{$movie.title|replace:"\"":""}" />
   {else}
       {gt text='Download'} ({$movie.flashFileMeta.size|muflashGetFileSize:$movie.flashFileFullPath:false:false})
   {/if}
   </a>
-{else}&nbsp;{/if}
 </dd>
     <dt>{gt text='Background colour'}</dt>
     <dd>{$movie.backgroundColour}</dd>
@@ -46,10 +39,10 @@
     <dt>{gt text='Player version'}</dt>
     <dd>{$movie.playerVersion}</dd>
 </dl>
-    {include file='user/include_standardfields_display.tpl' obj=$movie}
+    {include file='user/include_standardfields_display.tpl' obj=$movie} *}
 
 {if !isset($smarty.get.theme) || $smarty.get.theme ne 'Printer'}
-{if count($movie._actions) gt 0}
+{* {if count($movie._actions) gt 0}
     <p>{strip}
     {foreach item='option' from=$movie._actions}
         <a href="{$option.url.type|muflashActionUrl:$option.url.func:$option.url.arguments}" title="{$option.linkTitle|safetext}" class="z-icon-es-{$option.icon}">
@@ -57,7 +50,7 @@
         </a>
     {/foreach}
     {/strip}</p>
-{/if}
+{/if} *}
 
 {* include display hooks *}
 {notifydisplayhooks eventname='muflash.ui_hooks.movies.display_view' id=$movie.id urlobject=$currentUrlObject assign='hooks'}
