@@ -44,7 +44,7 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
     	$version = '0';
     	}
     	// set backgroundcolour
-    	$colour = '#' . $this->getBackgroundColour();
+    	$colour = $this->getBackgroundColour();
     	// play or not
     	$play = $this->getPlay();
     	if ($play == 0) {

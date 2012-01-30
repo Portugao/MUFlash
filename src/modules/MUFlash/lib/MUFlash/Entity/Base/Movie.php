@@ -137,7 +137,7 @@ abstract class MUFlash_Entity_Base_Movie extends Zikula_EntityAccess
      * @ORM\Column(length=255)
      * @var string $backgroundColour.
      */
-    protected $backgroundColour = 'ffffff';
+    protected $backgroundColour = '#ffffff';
 
 
     /**
