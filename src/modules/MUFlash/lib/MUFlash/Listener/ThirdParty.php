@@ -51,5 +51,6 @@ class MUFlash_Listener_ThirdParty
         // intended is using the add() method to add a plugin like below
         $types = $event->getSubject();
         $types->add('MUFlash_ContentType_ItemList');
+        $types->add('MUFlash_ContentType_OneItem');
     }
 }
