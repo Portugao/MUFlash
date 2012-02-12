@@ -70,9 +70,10 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
     	
     	$flashfile = $this->getFlashFile();
     	$host = System::getHost();
-    	$url = 'http://' . $host . '/userdata/MUFlash/movies/flashfile/' . $flashfile;
+    	$url = 'http://' . $host . '/userdata/MUFlash/movies/flashfile';
+    	$url2 = 'http://' . $host . '/userdata/MUFlash/movies/flashfile/' . $flashfile;
         
-        $moviecode = "<script type='text/javascript' src='http://zik132.mu-t-beratung.de/userdata/MUFlash/movies/flashfile/swfobject.js'></script>
+        $moviecode = "<script type='text/javascript' src='$url/swfobject.js'></script>
 		<script type='text/javascript'>
 			var swfVersionStr = '$version';
 			var xiSwfUrlStr = '';
@@ -95,7 +96,7 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
 			swfobject.createCSS('html', 'height:100%;');
 			swfobject.createCSS('body', 'margin:0; padding:0;');
 			swfobject.embedSWF(
-				'$url', '$title',
+				'$url2', '$title',
 				'$width', '$height',
 				swfVersionStr, xiSwfUrlStr,
 				flashvars, params, attributes);
