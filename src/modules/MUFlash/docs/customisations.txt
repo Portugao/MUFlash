@@ -1,0 +1,25 @@
+
+
+CUSTOMISATIONS
+--------------
+
+MUFlash - Manual additions and amendments
+
+
+changed files
+
+templates/contenttype/itemlist_Movie_display.tpl
+templates/user/movie/display.tpl
+
+implemented classes
+
+lib/MUFlash/Version.php
+lib/MUFlash/ContentType/OneItem.php
+lib/MUFlash/Controller/Admin.php
+lib/MUFlash/Controller/User.php
+lib/MUFlash/Entity/Movie.php
+
+
+Additional Files:
+
+
