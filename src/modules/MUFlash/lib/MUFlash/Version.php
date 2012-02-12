@@ -12,9 +12,47 @@
  */
 
 /**
- * Version information implementation class.
+ * Version information class.
  */
-class MUFlash_Version extends MUFlash_Base_Version
+class MUFlash_Version extends Zikula_AbstractVersion
 {
-    // custom enhancements can go here
+    public function getMetaData()
+    {
+        $meta = array();
+        // the current module version
+        $meta['version']              = '1.0.0';
+        // the displayed name of the module
+        $meta['displayname']          = $this->__('MUFlash');
+        // the module description
+        $meta['description']          = $this->__('MUFlash - Use flash files in content and blocks!');
+        //! url version of name, should be in lowercase without space
+        $meta['url']                  = $this->__('muflash');
+        // core requirement
+        $meta['core_min']             = '1.3.1'; // requires minimum 1.3.1 or later
+        $meta['core_max']             = '1.3.99'; // not ready for 1.4.0 yet
+
+        // define special capabilities of this module
+        $meta['capabilities'] = array(
+                          HookUtil::SUBSCRIBER_CAPABLE => array('enabled' => true)
+/*,
+                          HookUtil::PROVIDER_CAPABLE => array('enabled' => true), // TODO: see #15
+                          'authentication' => array('version' => '1.0'),
+                          'profile'        => array('version' => '1.0', 'anotherkey' => 'anothervalue'),
+                          'message'        => array('version' => '1.0', 'anotherkey' => 'anothervalue')
+*/
+        );
+
+        // permission schema
+        // DEBUG: permission schema aspect starts
+        $meta['securityschema'] = array(
+            'MUFlash::' => '::',
+
+            'MUFlash:Movie:' => 'MovieID::'
+        );
+        // DEBUG: permission schema aspect ends
+
+
+
+        return $meta;
+    }
 }
