@@ -6,20 +6,37 @@ CUSTOMISATIONS
 MUFlash - Manual additions and amendments
 
 
+
+
 changed files
 
-templates/contenttype/itemlist_Movie_display.tpl
-templates/user/movie/display.tpl
+*templates/contenttype/itemlist_Movie_display.tpl
+*templates/user/movie/display.tpl
+
+*lib/MUFlash/Listener/ThirdParty.php
 
 implemented classes
 
-lib/MUFlash/Version.php
-lib/MUFlash/ContentType/OneItem.php
-lib/MUFlash/Controller/Admin.php
-lib/MUFlash/Controller/User.php
-lib/MUFlash/Entity/Movie.php
+*lib/MUFlash/Version.php
+*lib/MUFlash/Block/OneItem.php
+*lib/MUFlash/ContentType/OneItem.php
+*lib/MUFlash/Controller/Admin.php
+*lib/MUFlash/Controller/User.php
+*lib/MUFlash/Entity/Movie.php
 
 
 Additional Files:
+
+direction modules
+
+*templates/block/oneitem_modify.tpl
+*templates/block/oneitem.tpl
+*templates/contenttype/oneitem_edit.tpl
+*templates/contenttype/oneitem_Movie_display_description.tpl
+*templates/contenttype/oneitem_Movie_display.tpl
+*templates/contenttype/oneitem_Movie_displaycontent.tpl
+
+direction userdata
+*MUFlash/movies/flashfile/swfobject.js
 
 
