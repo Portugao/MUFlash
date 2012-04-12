@@ -112,7 +112,7 @@ class MUFlash_ContentType_Base_ItemList extends Content_AbstractContentType
         );
         list($entities, $objectCount) = ModUtil::apiFunc('MUFlash', 'selection', 'getEntitiesPaginated', $selectionArgs);
 
-        $this->view->setCaching(true);
+        //$this->view->setCaching(true);
 
         $data = array('objectType' => $this->objectType, 'sorting' => $this->sorting, 'amount' => $this->amount, 'filter' => $this->filter, 'template' => $this->template);
 

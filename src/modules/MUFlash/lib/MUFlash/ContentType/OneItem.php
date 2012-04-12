@@ -67,14 +67,14 @@ class MUFlash_ContentType_OneItem extends Content_AbstractContentType
         $entityManager = $serviceManager->getService('doctrine.entitymanager');
         $repository = $entityManager->getRepository('MUFlash_Entity_' . ucfirst($this->objectType));
 
-        // get objects from database
+        // get object from database
         $selectionArgs = array(
             'ot' => $objectType,
             'id' => $this->id);
         
         $entity = ModUtil::apiFunc('MUFlash', 'selection', 'getEntity', $selectionArgs);
 
-        $this->view->setCaching(true);
+        //$this->view->setCaching(true);
 
         $data = array('objectType' => $this->objectType, 'id' => $this->id, 'template' => $this->template);
 

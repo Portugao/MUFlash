@@ -96,7 +96,7 @@ class MUFlash_Block_OneItem extends Zikula_Controller_AbstractBlock
         $repository = $entityManager->getRepository('MUFlash_Entity_' . ucfirst($objectType));
 
 
-        // get objects from database
+        // get object from database
         $selectionArgs = array(
             'ot' => $objectType,
             'id' => $vars['id'],
@@ -104,7 +104,7 @@ class MUFlash_Block_OneItem extends Zikula_Controller_AbstractBlock
         
         $entity = ModUtil::apiFunc('MUFlash', 'selection', 'getEntity', $selectionArgs);
 
-        $this->view->setCaching(true);
+      //  $this->view->setCaching(true);
 
         // assign block vars and fetched data
         $this->view->assign('vars', $vars)
