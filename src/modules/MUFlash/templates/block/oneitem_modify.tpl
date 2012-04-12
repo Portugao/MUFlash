@@ -13,7 +13,7 @@
 </div>
 
 <div class="z-formrow">
-    <label for="MUFlash_showtitle">{gt text='Diplay default block title?'}:</label>
+    <label for="MUFlash_showtitle">{gt text='Display default block title?'}:</label>
     <input type="checkbox" id="MUFlash_showtitle" name="showtitle" value="1"{if $showtitle eq 1} checked="checked"{/if} />
 </div>
 
