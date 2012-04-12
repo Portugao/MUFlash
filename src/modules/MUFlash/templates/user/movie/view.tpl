@@ -27,13 +27,7 @@
         <col id="ctitle" />
         <col id="cdescription" />
         <col id="cpreview" />
-        <col id="cflashfile" />
-        <col id="cbackgroundcolour" />
-        <col id="cplay" />
-        <col id="cplayloop" />
-        <col id="cwidth" />
-        <col id="cheight" />
-        <col id="cplayerversion" />
+       {* <col id="cflashfile" /> *}
         <col id="citemactions" />
     </colgroup>
     <thead>
@@ -47,27 +41,9 @@
         <th id="hpreview" scope="col" class="z-left">
             {sortlink __linktext='Preview' sort='preview' currentsort=$sort sortdir=$sdir all=$all modname='MUFlash' type='user' func='view' ot='movie'}
         </th>
-        <th id="hflashfile" scope="col" class="z-left">
+        {* <th id="hflashfile" scope="col" class="z-left">
             {sortlink __linktext='Flash file' sort='flashFile' currentsort=$sort sortdir=$sdir all=$all modname='MUFlash' type='user' func='view' ot='movie'}
-        </th>
-        <th id="hbackgroundcolour" scope="col" class="z-left">
-            {sortlink __linktext='Background colour' sort='backgroundColour' currentsort=$sort sortdir=$sdir all=$all modname='MUFlash' type='user' func='view' ot='movie'}
-        </th>
-        <th id="hplay" scope="col" class="z-center">
-            {sortlink __linktext='Play' sort='play' currentsort=$sort sortdir=$sdir all=$all modname='MUFlash' type='user' func='view' ot='movie'}
-        </th>
-        <th id="hplayloop" scope="col" class="z-center">
-            {sortlink __linktext='Play loop' sort='playLoop' currentsort=$sort sortdir=$sdir all=$all modname='MUFlash' type='user' func='view' ot='movie'}
-        </th>
-        <th id="hwidth" scope="col" class="z-left">
-            {sortlink __linktext='Width' sort='width' currentsort=$sort sortdir=$sdir all=$all modname='MUFlash' type='user' func='view' ot='movie'}
-        </th>
-        <th id="hheight" scope="col" class="z-left">
-            {sortlink __linktext='Height' sort='height' currentsort=$sort sortdir=$sdir all=$all modname='MUFlash' type='user' func='view' ot='movie'}
-        </th>
-        <th id="hplayerversion" scope="col" class="z-left">
-            {sortlink __linktext='Player version' sort='playerVersion' currentsort=$sort sortdir=$sdir all=$all modname='MUFlash' type='user' func='view' ot='movie'}
-        </th>
+        </th> *}
         <th id="hitemactions" scope="col" class="z-right z-order-unsorted">{gt text='Actions'}</th>
     </tr>
     </thead>
@@ -93,7 +69,7 @@
             {else}&nbsp;{/if}
 
         </td>
-        <td headers="hflashfile" class="z-left">
+        {* <td headers="hflashfile" class="z-left">
             {if $movie.flashFile ne ''}
               <a href="{$movie.flashFileFullPathURL}" title="{$movie.title|replace:"\"":""}"{if $movie.flashFileMeta.isImage} rel="imageviewer[movie]"{/if}>
               {if $movie.flashFileMeta.isImage}
@@ -104,25 +80,7 @@
               </a>
             {else}&nbsp;{/if}
 
-        </td>
-        <td headers="hbackgroundcolour" class="z-left">
-            {$movie.backgroundColour}
-        </td>
-        <td headers="hplay" class="z-center">
-            {$movie.play|yesno:true}
-        </td>
-        <td headers="hplayloop" class="z-center">
-            {$movie.playLoop|yesno:true}
-        </td>
-        <td headers="hwidth" class="z-left">
-            {$movie.width}
-        </td>
-        <td headers="hheight" class="z-left">
-            {$movie.height}
-        </td>
-        <td headers="hplayerversion" class="z-left">
-            {$movie.playerVersion}
-        </td>
+        </td> *}
         <td headers="hitemactions" class="z-right z-nowrap z-w02">
             {if count($movie._actions) gt 0}
             {strip}
