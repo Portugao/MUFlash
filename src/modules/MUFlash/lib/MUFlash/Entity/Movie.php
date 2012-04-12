@@ -38,6 +38,8 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
      */
     public function postLoadCallback()
     {
+    	$muflashmovie = PageUtil::resetVar('muflashmovie');
+    	
     	// check for version of player or not    	
     	$version = $this->getPlayerVersion();
     	if ($version == 0 || $version == '') {
@@ -61,6 +63,9 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
     	else {
     		$playloop = 'true';
     	}
+    	
+    	// get id of movie
+    	$id = $this->getId();
     	// get title of movie
     	$title = $this->getTitle();
     	// get width
@@ -73,8 +78,14 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
     	$url = 'http://' . $host . '/userdata/MUFlash/movies/flashfile';
     	$url2 = 'http://' . $host . '/userdata/MUFlash/movies/flashfile/' . $flashfile;
         
-        $moviecode = "<script type='text/javascript' src='$url/swfobject.js'></script>
-		<script type='text/javascript'>
+    	if ($muflashmovie == false) {
+        $moviecode = "<script type='text/javascript' src='$url/swfobject.js'></script>";
+    	}
+    	else {
+    		$moviecode = '';
+    	}
+    	
+    	$moviecode .= "<script type='text/javascript'>
 			var swfVersionStr = '$version';
 			var xiSwfUrlStr = '';
 			var flashvars = {};
@@ -85,12 +96,12 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
 			params.loop = '$playloop';
 			params.wmode = 'window';
 			params.scale = 'showall';
-			params.menu = 'true';
+			params.menu = 'false';
 			params.devicefont = 'false';
 			params.salign = '';
 			params.allowscriptaccess = 'sameDomain';
 			var attributes = {};
-			attributes.id = '$title';
+			attributes.id = '$id';
 			attributes.name = '$title';
 			attributes.align = 'middle';
 			swfobject.createCSS('html', 'height:100%;');
@@ -104,6 +115,10 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
 
         // add the scripts to page header
         PageUtil::addVar('header', $moviecode);
+        
+        if ($muflashmovie == false) {
+        	PageUtil::registerVar('muflashmovie', 1);
+        }
         
         $this->performPostLoadCallback();
     }
