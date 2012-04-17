@@ -103,9 +103,6 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
 			var attributes = {};
 			attributes.id = '$id';
 			attributes.name = '$title';
-			attributes.align = 'middle';
-			swfobject.createCSS('html', 'height:100%;');
-			swfobject.createCSS('body', 'margin:0; padding:0;');
 			swfobject.embedSWF(
 				'$url2', '$title',
 				'$width', '$height',
