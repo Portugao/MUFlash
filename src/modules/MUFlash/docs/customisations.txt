@@ -12,6 +12,8 @@ changed files
 
 *templates/contenttype/itemlist_Movie_display.tpl
 *templates/user/movie/display.tpl
+*templates/admin/footer.tpl
+*templates/user/footer.tpl
 
 *lib/MUFlash/Listener/ThirdParty.php
 
