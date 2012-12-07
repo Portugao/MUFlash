@@ -1,5 +1,5 @@
 MUFlash
 =====
 
-MUFlash is a module to handle falsh files.
+MUFlash is a module to handle flash files.
 
