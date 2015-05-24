@@ -8,8 +8,8 @@
     <h2>{$templateTitle|notifyfilters:'muflash.filter_hooks.movies.filter'}</h2>
     <p>{$movie.description}</p>
 		<div id="{$movie.title}">
-			<a href="adobe.com/go/getflash">
-				<img src="adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+			<a href="http://www.adobe.com/go/getflash">
+				<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
 			</a>
 			<p>{gt text='For this website is flash player version'} {$movie.playerVersion} {gt text='or higher necessary.'}</p>
 		</div>
