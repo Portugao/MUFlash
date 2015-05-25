@@ -75,8 +75,8 @@ class MUFlash_Entity_Movie extends MUFlash_Entity_Base_Movie
     	
     	$flashfile = $this->getFlashFile();
     	$host = System::getHost();
-    	$url = $host . '/userdata/MUFlash/movies/flashfile';
-    	$url2 = $host . '/userdata/MUFlash/movies/flashfile/' . $flashfile;
+    	$url = 'userdata/MUFlash/movies/flashfile';
+    	$url2 = '/userdata/MUFlash/movies/flashfile/' . $flashfile;
         
     	if ($muflashmovie == false) {
         $moviecode = "<script type='text/javascript' src='$url/swfobject.js'></script>";
